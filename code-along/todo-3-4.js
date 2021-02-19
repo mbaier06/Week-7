@@ -13,6 +13,13 @@ firebase.auth().onAuthStateChanged(async function(user) {
       email: user.email
     })
 
+    document.querySelector('sign-in-or-sign-out').innerHTML = `
+      <a href='#' class="sign-out text-pink-500 underline">Sign Out</a>
+    `
+    document.querySelector('.sign-out').addEventListener('click', async function(event){
+      event.preventDefault()
+    })
+
     document.querySelector('form').addEventListener('submit', async function(event) {
       event.preventDefault()
 
